@@ -14,4 +14,8 @@ export class CompanyService {
   async getCompanies(): Promise<Company[]> {
     return this.companyRepository.findAll();
   }
+
+  async findByCnpj(cnpj: string): Promise<Company | null> {
+    return this.companyRepository.findByCnpj(cnpj);
+  }
 }
