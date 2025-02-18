@@ -1,22 +1,35 @@
-# Dependências do Node.js
+# Node.js
 node_modules/
-package-lock.json
-yarn.lock
-
-# Compilação
 dist/
-
-# Configuração do ambiente
 .env
 
-# Logs e cache
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-logs/
-*.log
 
-# IDEs e editores de código
+# Docker
+docker-compose.override.yml
+.dockerignore
+data/
+
+# MySQL
+*.sql
+*.log
+*.frm
+*.ibd
+*.MYI
+*.MYD
+*.CSM
+*.CSV
+*.db
+
+# IDE/Editor
 .vscode/
 .idea/
 *.swp
+*.swo
+*.swn
+
+# TypeScript
+*.tsbuildinfo

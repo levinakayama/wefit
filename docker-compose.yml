@@ -5,11 +5,11 @@ services:
     platform: linux/x86_64
     image: mysql:5.6
     restart: unless-stopped
-    env_file: ./.env
+    env_file: .env  
     environment:
-      - MYSQL_ROOT_PASSWORD=$MYSQLDB_PASSWORD
-      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+      - MYSQL_ROOT_PASSWORD=${MYSQLDB_PASSWORD}
+      - MYSQL_DATABASE=${MYSQLDB_DATABASE}
     ports:
-      - $MYSQLDB_PORT:3306
+      - "${MYSQLDB_PORT}:3306"
     volumes:
       - ./data/:/var/lib/mysql
