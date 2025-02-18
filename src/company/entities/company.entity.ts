@@ -1,8 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { NewCompany } from '../interfaces/company.interface';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeorm';
 
-@Entity({ name: 'companies' }) 
-export class Company implements NewCompany {
+@Entity()
+export class Company {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -10,22 +9,19 @@ export class Company implements NewCompany {
   cnpj: string;
 
   @Column()
-  cpfResponsavel: string;
+  cpf_responsavel: string;
 
   @Column()
-  nome: string;
+  name: string;
 
-  @Column()
-  celular: string;
-
-  @Column({ nullable: true })
-  telefone?: string;
-
-  @Column()
+  @Column({ unique: true })
   email: string;
 
-  @Column()
-  confirmarEmail: string;
+  @Column({ nullable: true })
+  telefone: string;
+
+  @Column({ nullable: true })
+  celular: string;
 
   @Column()
   cep: string;
@@ -37,17 +33,18 @@ export class Company implements NewCompany {
   numero: string;
 
   @Column({ nullable: true })
-  complemento?: string;
-
-  @Column()
-  cidade: string;
+  complemento: string;
 
   @Column()
   bairro: string;
 
   @Column()
+  cidade: string;
+
+  @Column()
   estado: string;
 
-  @Column({ default: false })
-  termosAceitos: boolean;
+  @CreateDateColumn()
+  created_at: Date;
+    nome: any;
 }

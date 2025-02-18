@@ -1,16 +1,19 @@
 {
   "name": "teste-backend",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --files -r tsconfig-paths/register --inspect --ignore-watch node_modules src/index.ts"
+    "build": "tsc",
+    "start": "ts-node-dev --files -r tsconfig-paths/register --inspect --ignore-watch node_modules src/index.ts",
+    "start:dev": "nest start --watch",
+    "start:debug": "node --inspect-brk -r tsconfig-paths/register node_modules/.bin/ts-node src/index.ts"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.10",
     "@nestjs/config": "^4.0.0",
     "@nestjs/core": "^11.0.10",
     "@nestjs/mapped-types": "^2.1.0",
+    "@nestjs/platform-express": "^11.0.10",
     "@nestjs/typeorm": "^11.0.0",
     "class-validator": "^0.14.1",
     "express": "^4.17.3",
