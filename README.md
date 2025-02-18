@@ -87,7 +87,6 @@ docker ps
 docker exec -it wefit-mysqldb mysql -u root -p
 ```
 
-(Senha padrão: **senha_root_123**)
 
 ### 🔹 Certifique-se de que o banco **wefit** foi criado corretamente:
 
@@ -236,18 +235,6 @@ FLUSH PRIVILEGES;
 ```sh
 npm run start:dev
 ```
-
-### ❌ **Swagger não exibe os exemplos no POST**
-
-Se os exemplos do **Swagger** não estiverem aparecendo corretamente:
-
-1️⃣ Verifique o DTO `CreateCompanyDto` e garanta que os decoradores `@ApiBody` estão sendo utilizados.
-
-2️⃣ Certifique-se de que o **NestJS** foi reiniciado após qualquer alteração no código.
-
-3️⃣ Tente limpar o cache do navegador e reiniciar a API.
-
----
 
 ## 📌 Contribuição
 
